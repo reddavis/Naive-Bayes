@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".document",
      ".gitignore",
      "LICENSE",
+     "Naive Bayes.gemspec",
      "README.rdoc",
      "Rakefile",
      "VERSION",
