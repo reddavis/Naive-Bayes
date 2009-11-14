@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "naive_bayes"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.name = "Naive Bayes"
+    gem.summary = %Q{Simple straight forward Naive Bayes classifier implementation}
+    gem.description = %Q{Simple straight forward Naive Bayes classifier implementation}
     gem.email = "reddavis@gmail.com"
-    gem.homepage = "http://github.com/reddavis/naive_bayes"
+    gem.homepage = "http://github.com/reddavis/Naive-Bayes"
     gem.authors = ["reddavis"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
