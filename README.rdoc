@@ -1,18 +1,27 @@
-= naive_bayes
+= Naive Bayes Classifier
 
-Description goes here.
+This is an extremely simple, straight forward Naive Bayes implementation.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Install
 
+  gem sources -a -http://gemcutter.org
+  sudo gem install naive_bayes
+  
+== How To Use
+
+  require 'rubygems'
+  require 'naive_bayes'
+  
+  a = NaiveBayes.new(:spam, :ham)
+  
+  a.train(:spam, 'bad', 'word')
+  a.train(:ham, 'good', 'word')
+  
+  b = "this is a bad sentence".split(' ')
+  
+  a.classify(*b)
+    #=> [:spam, 0.03125]
+  
 == Copyright
 
-Copyright (c) 2009 reddavis. See LICENSE for details.
+Copyright (c) 2009 Red Davis. See LICENSE for details.
