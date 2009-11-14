@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/naive_bayes.rb",
+     "naive_bayes.gemspec",
      "spec/naive_bayes_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
