@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "Naive Bayes"
+    gem.name = "naive_bayes"
     gem.summary = %Q{Simple straight forward Naive Bayes classifier implementation}
     gem.description = %Q{Simple straight forward Naive Bayes classifier implementation}
     gem.email = "reddavis@gmail.com"
