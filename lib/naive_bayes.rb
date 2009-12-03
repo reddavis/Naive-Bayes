@@ -12,9 +12,7 @@
 # So we don't bother to calculate it
 
 class NaiveBayes
-  
-  attr_reader :features_count, :klass_count
-  
+    
   def initialize(*klasses)
     @features_count = {}
     @klass_count = {}
