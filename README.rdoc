@@ -21,6 +21,31 @@ This is an extremely simple, straight forward Naive Bayes implementation.
   
   a.classify(*b)
     #=> [:spam, 0.03125]
+    
+You can also tell your classifier to save itself, so its easy for you to pick up where you left off:
+
+  require 'rubygems'
+  require 'naive_bayes'
+
+  a = NaiveBayes.new(:spam, :ham)
+  a.db_filepath = 'path/to/anywhere.nb'
+  
+  # Save is called after every train function
+  a.train(:spam, 'bad', 'word')
+  a.train(:ham, 'good', 'word')
+
+Some time goes past and we want to classify a new document we just received...
+  
+  require 'rubygems'
+  require 'naive_bayes'
+  
+  a = NaiveBayes.load('path/to/file') 
+  
+  b = "this is a bad sentence".split(' ')
+  
+  # It's as if we were never apart
+  a.classify(*b)
+    #=> [:spam, 0.03125]
   
 == Copyright
 

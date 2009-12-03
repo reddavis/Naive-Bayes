@@ -12,7 +12,21 @@
 # So we don't bother to calculate it
 
 class NaiveBayes
+  
+  class << self
+    def load(db_path)
+      data = ""
+      File.open(db_path) do |f|
+        while line = f.gets
+          data << line
+        end
+      end
+      Marshal.load(data)
+    end
+  end
     
+  attr_accessor :db_filepath  
+  
   def initialize(*klasses)
     @features_count = {}
     @klass_count = {}
@@ -29,6 +43,7 @@ class NaiveBayes
       @features_count[klass][feature] += 1
     end
     @klass_count[klass] += 1
+    save
   end
   
   #P(Class | Item) = P(Item | Class) * P(Class)
@@ -41,6 +56,14 @@ class NaiveBayes
   end
   
   private
+  
+  def save
+    if @db_filepath
+      File.open(@db_filepath, "w+") do |f|
+        f.write(Marshal.dump(self))
+      end
+    end
+  end
   
   # P(Item | Class)
   def prob_of_item_given_a_class(features, klass)
