@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2009-12-03}
+  s.date = %q{2010-01-05}
   s.description = %q{Simple straight forward Naive Bayes classifier implementation}
   s.email = %q{reddavis@gmail.com}
   s.extra_rdoc_files = [
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/naive_bayes.rb",
      "naive_bayes.gemspec",
+     "spec/db/naive.nb",
      "spec/naive_bayes_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
