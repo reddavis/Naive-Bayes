@@ -30,9 +30,10 @@ You can also tell your classifier to save itself, so its easy for you to pick up
   a = NaiveBayes.new(:spam, :ham)
   a.db_filepath = 'path/to/anywhere.nb'
   
-  # Save is called after every train function
   a.train(:spam, 'bad', 'word')
   a.train(:ham, 'good', 'word')
+  
+  a.save
 
 Some time goes past and we want to classify a new document we just received...
   
