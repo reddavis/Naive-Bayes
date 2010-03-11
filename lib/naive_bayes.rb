@@ -67,14 +67,13 @@ class NaiveBayes
   def prob_of_item_given_a_class(features, klass)
     a = features.inject(1.0) do |sum, feature|
       prob = prob_of_feature_given_a_class(feature, klass)
-      prob = assumed_probability if prob == 0
       sum *= prob
     end
   end
   
   # P(Feature | Class)
   def prob_of_feature_given_a_class(feature, klass)
-    return 0.5 if @klass_count[klass] == 0
+    return assumed_probability if @klass_count[klass] == 0
     @features_count[klass][feature] / @klass_count[klass]
   end
   
