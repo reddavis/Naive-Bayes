@@ -43,7 +43,6 @@ class NaiveBayes
       @features_count[klass][feature] += 1
     end
     @klass_count[klass] += 1
-    save
   end
   
   #P(Class | Item) = P(Item | Class) * P(Class)
@@ -55,16 +54,15 @@ class NaiveBayes
     scores.sort {|a,b| b[1] <=> a[1]}[0]
   end
   
-  private
-  
   def save
-    if @db_filepath
-      File.open(@db_filepath, "w+") do |f|
-        f.write(Marshal.dump(self))
-      end
+    raise "You haven't set a db_filpath, I dont know where to save" if @db_filepath.nil?
+    File.open(@db_filepath, "w+") do |f|
+      f.write(Marshal.dump(self))
     end
   end
   
+  private
+    
   # P(Item | Class)
   def prob_of_item_given_a_class(features, klass)
     a = features.inject(1.0) do |sum, feature|

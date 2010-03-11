@@ -14,16 +14,26 @@ describe "NaiveBayes" do
     end
   end
   
-  describe "Save" do
-    before do
-      @classifier = NaiveBayes.new(:spam, :ham)
-      @classifier.db_filepath = db_filepath
+  describe "Saving the NB" do
+    describe "DB filepath has been set" do
+      before do
+        @classifier = NaiveBayes.new(:spam, :ham)
+        @classifier.db_filepath = db_filepath
+      end
+    
+      it "should save to the filepath provided" do
+        FileUtils.rm(db_filepath, :force => true)
+        @classifier.save
+        File.exists?(db_filepath).should be_true
+      end
     end
     
-    it "should save to the filepath provided" do
-      FileUtils.rm(db_filepath, :force => true)
-      @classifier.train(:spam, 'bad')
-      File.exists?(db_filepath).should be_true
+    describe "DB filepath has no been set" do
+      it "should raise an error" do
+        lambda do  
+          NaiveBayes.new(:spam, :ham).save
+        end.should raise_error
+      end
     end
   end
   
@@ -33,6 +43,7 @@ describe "NaiveBayes" do
       classifier.db_filepath = db_filepath
       classifier.train(:spam, 'bad', 'word')
       classifier.train(:ham, 'we', 'bad')
+      classifier.save
     end
     
     it "should return 0.5" do

@@ -1,1 +1,1 @@
-o:NaiveBayes	:@klass_count{:	spamf1:hamf1:@db_filepath"D/Users/reddavis/Documents/projects/naive_bayes/spec/db/naive.nb:@features_count{;}"	wordf1"badf1f0;}"wef1"badf1@:@klasses[;;
+o:NaiveBayes	:@features_count{:	spam}I"bad:encoding"US-ASCIIf1I"	word;@	f1f0:ham}I"we;@	f1I"bad;@	f1@:@klass_count{;f1;	f1:@klasses[;;	:@db_filepathI"U/Users/reddavis/Documents/projects/machine_learning/naive_bayes/spec/db/naive.nb;"UTF8-MAC
