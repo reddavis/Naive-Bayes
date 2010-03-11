@@ -73,7 +73,7 @@ class NaiveBayes
   
   # P(Feature | Class)
   def prob_of_feature_given_a_class(feature, klass)
-    return assumed_probability if @klass_count[klass] == 0
+    return assumed_probability if @features_count[klass][feature] == 0
     @features_count[klass][feature] / @klass_count[klass]
   end
   
