@@ -1,1 +1,1 @@
-o:NaiveBayes	:@klass_count{:	spamf1:hamf1:@db_filepath"U/Users/reddavis/Documents/projects/machine_learning/naive_bayes/spec/db/naive.nb:@features_count{;}"	wordf1"badf1f0;}"wef1"badf1@:@klasses[;;
+o:NaiveBayes	:@features_count{:	spam}I"bad:EFf1I"	word;Ff1f0:ham}I"we;Ff1I"bad;Ff1@:@klass_count{;f1;	f1:@klasses[;;	:@db_filepathI"F/media/win/Users/Oscar/workspace/RoR/naive_bayes/spec/db/naive.nb;F
