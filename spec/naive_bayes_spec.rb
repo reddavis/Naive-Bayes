@@ -12,6 +12,13 @@ describe "NaiveBayes" do
       a[0].should == :spam
       a[1].should == 0.5
     end
+    
+    it "should change information" do
+      @classifier.untrain(:spam, 'bad', 'word')
+      a = @classifier.classify('bad', 'word')
+      a[0].should == :ham
+      a[1].should == 1.0
+    end
   end
   
   describe "Saving the NB" do

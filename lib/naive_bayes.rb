@@ -45,6 +45,13 @@ class NaiveBayes
     @klass_count[klass] += 1
   end
   
+  def untrain(klass, *features)
+    features.uniq.each do |feature|
+      @features_count[klass][feature] -= 1
+    end
+    @klass_count[klass] -= 1
+  end
+  
   #P(Class | Item) = P(Item | Class) * P(Class)
   def classify(*features)
     scores = {}
