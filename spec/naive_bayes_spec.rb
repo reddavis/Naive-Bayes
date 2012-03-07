@@ -19,6 +19,12 @@ describe "NaiveBayes" do
       a[0].should == :ham
       a[1].should == 1.0
     end
+    
+    it "should return the first choise when there is no classification" do
+      classifier = NaiveBayes.new(:spam, :ham)
+      classifier.classify('bad', 'word')[0].should == :spam
+      classifier.classify('bad', 'word')[1].should == 0
+    end
   end
   
   describe "Saving the NB" do
