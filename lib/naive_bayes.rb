@@ -63,7 +63,7 @@ class NaiveBayes
   
   def save
     raise "You haven't set a db_filpath, I dont know where to save" if @db_filepath.nil?
-    File.open(@db_filepath, "w+") do |f|
+    File.open(@db_filepath, "wb+") do |f|
       f.write(Marshal.dump(self))
     end
   end
