@@ -56,7 +56,10 @@ class NaiveBayes
   def classify(*features)
     scores = {}
     @klasses.each do |klass|
-      scores[klass] = (prob_of_item_given_a_class(features, klass) * prob_of_class(klass))
+      prob_of_item_given_a_class = prob_of_item_given_a_class(features, klass)
+      prob_of_class = prob_of_class(klass)
+      result = (prob_of_item_given_a_class * prob_of_class)
+      scores[klass] = result.nan? ? 0 : result
     end
     scores.sort {|a,b| b[1] <=> a[1]}[0]
   end

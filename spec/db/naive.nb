@@ -1,1 +1,1 @@
-o:NaiveBayes	:@features_count{:	spam}I"bad:EFf1I"	word;Ff1f0:ham}I"we;Ff1I"bad;Ff1@:@klass_count{;f1;	f1:@klasses[;;	:@db_filepathI"F/media/win/Users/Oscar/workspace/RoR/naive_bayes/spec/db/naive.nb;F
+o:NaiveBayes	:@features_count{:	spam}I"bad:EFf1I"	word;Ff1f0:ham}I"we;Ff1I"bad;Ff1@:@klass_count{;f1;	f1:@klasses[;;	:@db_filepathI"D/home/dougui/onopia/vendor/plugins/Naive-Bayes/spec/db/naive.nb;F
